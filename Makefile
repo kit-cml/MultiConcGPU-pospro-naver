@@ -34,7 +34,7 @@ CXXLINK := nvlink
 
 # LDFLAGS is used for linker (-g enables debug symbols)
 # LDFLAGS  += -g -L/usr/local/cuda/lib64
-LDFLAGS  += -g -L/usr/local/cuda/lib64 -arch=sm_86 -rdc=true
+LDFLAGS  += -g -L/usr/local/cuda/lib64 -arch=sm_70 -rdc=true
 
 # List the project' sources to compile or let the Makefile recognize
 # them for you using 'wildcard' function.
@@ -72,7 +72,7 @@ $(PROGNAME) : $(OBJECTS) Makefile
 #
 # Choice 2: don't use implicit rules and specify our will
 %.o: %.cpp $(HEADERS) Makefile
-	$(CXX) -x cu $(CXXFLAGS) $(CPPFLAGS) -dc -arch=sm_86 $(OUTPUT_OPTION) $<
+	$(CXX) -x cu $(CXXFLAGS) $(CPPFLAGS) -dc -arch=sm_70 $(OUTPUT_OPTION) $<
 # -dc -rdc=true 
 
 # Simple clean-up target
